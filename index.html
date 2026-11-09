@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f"><meta name="description" content="IceShift — personal hockey development lab">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="styles.css"><title>IceShift — Development Lab</title>
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+  <a class="brand" href="#"><span class="brand-mark">IS</span><span><b>ICE<span>SHIFT</span></b><small>PLAYER DEVELOPMENT LAB</small></span></a>
+  <div class="side-label">WORKSPACE</div>
+  <button class="nav active" data-page="overview"><span>◫</span> Overview</button>
+  <button class="nav" data-page="training"><span>⌁</span> Training plan</button>
+  <button class="nav" data-page="film"><span>▶</span> Film room <i class="new-tag">NEW</i></button>
+  <button class="nav" data-page="progress"><span>↗</span> Progress</button>
+  <button class="nav" data-page="logs"><span>▤</span> Game log</button>
+  <div class="sidebar-bottom"><div class="profile-mini"><div class="avatar">D</div><div><b>Defenceman</b><small>Personal workspace</small></div><span class="online-dot"></span></div><small class="privacy-note">LOCAL-FIRST · NO ACCOUNT</small></div>
+</aside>
+<main class="main">
+<header class="topbar"><div><div class="eyebrow">PLAYER DEVELOPMENT / 2026–27</div><h1 id="page-title">Your development hub</h1></div><div class="top-actions"><span class="local-pill"><i></i> SAVED ON THIS DEVICE</span><button id="export-btn" class="button ghost">Export data ↗</button></div></header>
+<section class="page active" id="page-overview">
+  <div class="hero">
+    <div class="hero-copy"><span class="kicker">BUILD YOUR NEXT LEVEL</span><h2>Every shift has<br><em>a purpose.</em></h2><p>Train with intent. Review your game. Turn small improvements into habits.</p><button class="button bright" data-go="film">Open film room <span>→</span></button></div>
+    <div class="hero-art"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="ice-disc"><span>01</span><b>READ<br>THE PLAY</b><small>SCAN · DECIDE · EXECUTE</small></div><div class="floating-stat"><small>THIS WEEK</small><b id="hero-minutes">0 <small>min</small></b><span>ON YOUR PLAN</span></div></div>
+  </div>
+  <div class="section-heading"><div><div class="eyebrow">YOUR SNAPSHOT</div><h2>At a glance</h2></div><span class="muted" id="today-label"></span></div>
+  <div class="stat-grid">
+    <article class="stat-card"><div class="stat-top"><span>Training time</span><span class="stat-icon">◷</span></div><b id="stat-minutes">0 <small>min</small></b><p>This week logged</p><div class="mini-line"><span style="width:8%"></span></div></article>
+    <article class="stat-card"><div class="stat-top"><span>Sessions done</span><span class="stat-icon">✓</span></div><b id="stat-sessions">0 <small>/ 7</small></b><p>Plan completion</p><div class="mini-line"><span id="session-bar" style="width:0%"></span></div></article>
+    <article class="stat-card"><div class="stat-top"><span>Film reviews</span><span class="stat-icon">▶</span></div><b id="stat-film">0</b><p>Reviews saved</p><div class="mini-line"><span id="film-bar" style="width:0%"></span></div></article>
+    <article class="stat-card"><div class="stat-top"><span>Latest rating</span><span class="stat-icon">✳</span></div><b id="stat-rating">— <small>/ 5</small></b><p>Across your skills</p><div class="mini-line"><span id="rating-bar" style="width:0%"></span></div></article>
+  </div>
+  <div class="content-grid"><article class="panel"><div class="panel-head"><div><div class="eyebrow">TODAY'S FOCUS</div><h3 id="today-focus">Acceleration & first three strides</h3></div><span class="tag">ODR PLAN</span></div><p class="panel-copy">Keep it short and sharp. Quality reps matter more than getting tired.</p><div class="focus-steps"><div><span>01</span><p><b>Warm up</b><small>Easy laps, edges and controlled stops · 5–8 min</small></p></div><div><span>02</span><p><b>Quality reps</b><small>Short starts with full recovery between efforts</small></p></div><div><span>03</span><p><b>Finish in control</b><small>Stop while technique still feels clean</small></p></div></div><button class="button outline" data-go="training">View full training plan →</button></article>
+  <article class="panel quote-panel"><div class="eyebrow">DEVELOPMENT RULE</div><div class="quote-mark">“</div><h3>Don't just watch the puck. Read what happens <em>before</em> it gets there.</h3><p>Scan early, create an option, then make the simple play.</p><div class="quote-line"></div><small>DEFENCEMAN MINDSET / 001</small></article></div>
+  <div class="section-heading"><div><div class="eyebrow">NEXT STEP</div><h2>Build your review habit</h2></div></div>
+  <div class="film-promo"><div class="promo-icon">▶</div><div><h3>Bring your game footage into the film room</h3><p>Add a YouTube game link, your jersey number, and key timestamps. Compare your choices with a Cumberland Castors reference clip.</p></div><button class="button bright" data-go="film">Start a review →</button></div>
+</section>
+<section class="page" id="page-training">
+  <div class="page-intro"><div><div class="eyebrow">WEEKLY STRUCTURE</div><h2>Train with a purpose.</h2><p>Use this as a flexible guide around team practices and games. Skip or shorten sessions if you're tired, sore, or the ice is unsafe.</p></div><span class="tag">ODR / OFF-ICE</span></div>
+  <div id="training-list" class="training-list"></div>
+</section>
+<section class="page" id="page-film">
+  <div class="page-intro"><div><div class="eyebrow">VIDEO REVIEW WORKSPACE</div><h2>Find your next <em>edge.</em></h2><p>Save clips, track your jersey number, and turn moments into specific practice goals.</p></div><span class="tag blue">FILM ROOM · BETA</span></div>
+  <div class="notice"><b>How video analysis works:</b> this offline app can save links and uploaded clips locally, but it does not automatically understand video or stream YouTube footage. Use the player and timestamps to select moments; for AI feedback, upload short clips/screenshots to a video-capable assistant and paste the feedback here.</div>
+  <div class="film-grid">
+    <form id="film-form" class="panel form-panel">
+      <div class="panel-head"><div><div class="eyebrow">01 / ADD FOOTAGE</div><h3>Your game or reference clip</h3></div><span class="step-number">01</span></div>
+      <label>Review title<input name="title" required placeholder="e.g. vs. Kanata — Nov 8"></label>
+      <label>Video type<select name="kind"><option value="game">My game</option><option value="reference">Cumberland Castors reference</option><option value="practice">Team practice</option><option value="other">Other clip</option></select></label>
+      <label>YouTube URL (optional)<input name="url" type="url" placeholder="https://youtube.com/watch?v=..."></label>
+      <div class="two-fields"><label>Your jersey number<input name="number" inputmode="numeric" placeholder="e.g. 24" maxlength="3"></label><label>Period / time stamp<input name="timestamp" placeholder="e.g. P2 · 08:42"></label></div>
+      <label>Upload a video clip (optional)<input name="video" type="file" accept="video/*"></label><small class="field-help">Uploaded clips stay in this browser when storage allows. Large videos may exceed browser storage limits; keep clips short.</small>
+      <label>What do you want to review?<textarea name="question" rows="3" placeholder="e.g. Am I checking my shoulder before the puck arrives? How can I make a better first pass?"></textarea></label>
+      <button class="button bright full" type="submit">Save to film room + open review →</button>
+    </form>
+    <div class="panel analysis-panel"><div class="panel-head"><div><div class="eyebrow">02 / REVIEW THE MOMENT</div><h3>Defenceman review checklist</h3></div><span class="step-number">02</span></div>
+      <p class="panel-copy">Use these prompts at each timestamp. Look for repeatable habits, not one perfect or bad play.</p>
+      <div class="checklist" id="review-checklist">
+        <label><input type="checkbox" value="Scan"><span><b>Scan before receiving</b><small>Did I check both shoulders and know my options?</small></span></label>
+        <label><input type="checkbox" value="Gap"><span><b>Gap and angle</b><small>Did I keep a controlled gap and guide the attacker wide?</small></span></label>
+        <label><input type="checkbox" value="Body position"><span><b>Body position</b><small>Was I balanced, between the attacker and the net?</small></span></label>
+        <label><input type="checkbox" value="Retrieval"><span><b>Puck retrieval</b><small>Did I shoulder-check, take a useful route and protect the puck?</small></span></label>
+        <label><input type="checkbox" value="First pass"><span><b>First pass / exit</b><small>Did I choose a simple, safe outlet under pressure?</small></span></label>
+        <label><input type="checkbox" value="Transition"><span><b>Transition and recovery</b><small>Did I react quickly when possession changed?</small></span></label>
+      </div>
+      <label class="standalone-label">What did you notice?<textarea id="review-notes" rows="4" placeholder="At 08:42, I looked down before receiving and missed the winger..."></textarea></label>
+      <button id="save-notes" class="button outline full">Save checklist + notes</button>
+    </div>
+  </div>
+  <div class="section-heading"><div><div class="eyebrow">YOUR LIBRARY</div><h2>Saved reviews</h2></div><span id="review-count" class="tag">0 CLIPS</span></div>
+  <div id="film-library" class="film-library"><div class="empty-state">No footage saved yet. Add your first game or reference clip above.</div></div>
+</section>
+<section class="page" id="page-progress">
+  <div class="page-intro"><div><div class="eyebrow">MEASURE WHAT MATTERS</div><h2>Progress over time.</h2><p>Rate your skills honestly after a practice or game. Look for trends over weeks, not overnight changes.</p></div></div>
+  <div class="progress-grid"><article class="panel"><div class="panel-head"><div><div class="eyebrow">SKILL RATINGS</div><h3>Current level</h3></div></div><form id="rating-form" class="rating-form"></form></article><article class="panel"><div class="panel-head"><div><div class="eyebrow">CONSISTENCY</div><h3>Training minutes</h3></div><span class="tag">LAST 7 DAYS</span></div><div id="chart" class="chart"></div></article></div>
+  <article class="panel rating-history"><div class="panel-head"><div><div class="eyebrow">HISTORY</div><h3>Recent ratings</h3></div></div><div id="rating-history"></div></article>
+</section>
+<section class="page" id="page-logs">
+  <div class="page-intro"><div><div class="eyebrow">GAMES / PRACTICES / WORK</div><h2>Keep a record.</h2><p>Log what you did and one takeaway. This helps connect the work you put in to what shows up on the ice.</p></div></div>
+  <div class="logs-grid"><form id="log-form" class="panel form-panel"><div class="eyebrow">NEW ENTRY</div><h3>Add to your log</h3><label>Type<select name="type"><option>Game</option><option>Team practice</option><option>ODR training</option><option>Off-ice workout</option></select></label><label>Title / opponent<input name="title" required placeholder="e.g. vs. Gloucester"></label><div class="two-fields"><label>Date<input name="date" type="date" required></label><label>Duration (minutes)<input name="duration" type="number" min="1" max="300" required placeholder="60"></label></div><label>Takeaway<textarea name="notes" rows="3" placeholder="One thing that went well, one thing to improve..."></textarea></label><button class="button bright full">Save entry →</button></form><article class="panel"><div class="panel-head"><div><div class="eyebrow">RECENT ACTIVITY</div><h3>Your logbook</h3></div></div><div id="log-list" class="log-list"></div></article></div>
+</section>
+<footer><span>ICESHIFT <i>·</i> PLAYER DEVELOPMENT LAB</span><span>LOCAL DATA ONLY · EXPORT REGULARLY</span></footer>
+</main></div>
+<div id="toast" role="status" class="toast"></div>
+<script src="app.js"></script>
+</body></html>
